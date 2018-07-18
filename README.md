@@ -1,45 +1,44 @@
 
 # react-native-react-native-screen-listener
 
+This library was created to wrap previous and current pages under one callback.
+**This library only works with** [react-native-navigation v1](https://github.com/wix/react-native-navigation).
+You can find the original event listener if you search for `ScreenVisibilityListener` in the github repo
+For deeper understanding of the navigation behavior please refer to library github pages.
+
 ## Getting started
 
-`$ npm install react-native-react-native-screen-listener --save`
-
-### Mostly automatic installation
-
-`$ react-native link react-native-react-native-screen-listener`
-
-### Manual installation
-
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-react-native-screen-listener` and add `RNReactNativeScreenListener.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNReactNativeScreenListener.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNReactNativeScreenListenerPackage;` to the imports at the top of the file
-  - Add `new RNReactNativeScreenListenerPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-react-native-screen-listener'
-  	project(':react-native-react-native-screen-listener').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-react-native-screen-listener/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-react-native-screen-listener')
-  	```
-
+`$ npm install react-native-screen-listener --save`
 
 ## Usage
 ```javascript
-import RNReactNativeScreenListener from 'react-native-react-native-screen-listener';
+import ScreenListener from 'react-native-screen-listener';
 
-// TODO: What to do with the module?
-RNReactNativeScreenListener;
+const beforeCallback = screenData => {
+  //TODO something with the previous and current screen before the update
+}
+
+const afterCallback = screenData => {
+  //TODO something with the previous and current screen after update
+}
+
+//initialize reference
+const listener = new ScreenListener({ beforeCallback, afterCallback });
+//register event emitters
+listener.register();
+
+//unregister to avoid leaks
+listener.unregister();
 ```
   
+### ScreenData
+
+Screen data returns an object with two keys: `previous` and `current`. Both these represent the screen data. 
+They contain:
+
+| Value | Description |
+| --- | --- |
+| commandType | Name of the command issued to get to this screen. Only at `current`. |
+| endTime | Time when the new screen appeared/disappeared |
+| screen | Name of the screen |
+| startTime | Time when the screen started to initialize. Only at `current`. |
