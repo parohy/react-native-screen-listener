@@ -1,0 +1,12 @@
+{
+  "name": "react-native-react-native-screen-listener",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "keywords": ["react-native", "react-native-navigation", "react-natie-event", "screen-listener"],
+  "author": "Tomas Paronai",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "0.51.2"
+  }
+}
