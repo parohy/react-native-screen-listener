@@ -43,20 +43,20 @@ export default class ScreenVisibilityListener {
 
   _willAppear = (data: NavData): void => {
     this._status.before.current = data;
+    this._fireBeforeCallback();
   };
 
   _willDisappear = (data: NavData): void => {
     this._status.before.previous = data;
-    this._fireBeforeCallback();
   };
 
   _didAppear = (data: NavData): void => {
     this._status.after.current = data;
+    this._fireAfterCallback();
   };
 
   _didDisappear = (data: NavData): void => {
     this._status.after.previous = data;
-    this._fireAfterCallback();
   };
 
   _fireBeforeCallback = (): void => {
