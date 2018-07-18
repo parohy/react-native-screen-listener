@@ -1,7 +1,11 @@
 {
   "name": "react-native-screen-listener",
   "version": "0.0.1",
-  "description": "",
+  "description": "Wrap for react-native-navigation ScreenVisibilityListener.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomas-paronai/react-native-screen-listener.git"
+  },
   "main": "index.js",
   "keywords": ["react-native", "react-native-navigation", "react-natie-event", "screen-listener"],
   "author": "Tomas Paronai",
