@@ -1,6 +1,6 @@
 {
   "name": "react-native-screen-listener",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Wrap for react-native-navigation ScreenVisibilityListener.",
   "repository": {
     "type": "git",
