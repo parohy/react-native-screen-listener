@@ -1,5 +1,6 @@
 
 # react-native-screen-listener
+[![Build Status](https://travis-ci.org/tomas-paronai/react-native-screen-listener.svg?branch=master)](https://travis-ci.org/tomas-paronai/react-native-screen-listener)
 
 This library was created to wrap previous and current pages under one callback.
 **This library only works with** [react-native-navigation v1](https://github.com/wix/react-native-navigation).
