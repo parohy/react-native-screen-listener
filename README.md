@@ -53,3 +53,4 @@ They contain:
 | endTime | Time when the new screen appeared/disappeared |
 | screen | Name of the screen |
 | startTime | Time when the screen started to initialize. Only at `current`. |
+| status | What happen to the screen. This is only set when subscribing events. |
