@@ -10,6 +10,9 @@
   "keywords": ["react-native", "react-native-navigation", "react-natie-event", "screen-listener"],
   "author": "Tomas Paronai",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "peerDependencies": {
     "react-native": "0.51.2"
   }
