@@ -2,7 +2,7 @@ language: node_js
 
 deploy:
   provider: script
-  script: "echo \"//registry.npmjs.org/:_authToken=${NPM_TOKEN}\"> $HOME/.npmrc && npm publish"
+  script: "cp .npmrc.template $HOME/.npmrc && npm publish"
   skip_cleanup: true
   on:
     branch: master
