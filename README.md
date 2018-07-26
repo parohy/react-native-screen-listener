@@ -30,7 +30,17 @@ listener.register();
 //unregister to avoid leaks
 listener.unregister();
 ```
-  
+
+### Adding event listeners
+Event listener is a callback which is executed when a certain navigation event happens for a certain screen.
+For an example, lets say I want to print out message "Hello home_screen!" when ever *home_screen* appears.
+
+```javascript
+listener.registerEventCallback(ScreenListener.AFTER, 'home_screen', data => {
+  console.log(`Hello ${data.screen}!`)
+});
+```
+
 ### ScreenData
 
 Screen data returns an object with two keys: `previous` and `current`. Both these represent the screen data. 
